@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Chrome Extesion - Omniplex Learning Test</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="/script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="formContainer">
+            <h1>Sign in Below!</h1>
+            <form action="/example_url.php" method="post">
+                <div class="formInput">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" placeholder="Username">
+                </div>
+                <div class="formInput">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="Password">
+                </div>
+                <div class="loginButtonContainer">
+                    <button class="usernameLoginBtn" type="submit">Sign In With Username</button>
+                </div>
+            </form>
+        </div>
+        <div class="googleSignInContainer">
+            <button class="googleButton"></button>
+        </div>
+    </div>
+</body>
+</html>

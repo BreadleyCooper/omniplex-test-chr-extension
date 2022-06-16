@@ -1,0 +1,11 @@
+{
+    "name": "Omniplex Test Extension",
+    "version": "1.0.0",
+    "description": "Chrome extension that monitors for lack of input",
+    "manifest_version": 3,
+    "author": "Jordan Ulmer",
+    "action":{
+        "default_popup": "index.html",
+        "default_title": "Login Popup"
+    }
+}
