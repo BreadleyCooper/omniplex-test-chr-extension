@@ -30,15 +30,29 @@ input, label {
 input {
     padding: 5px;
     margin: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
 }
 
 .usernameLoginBtn {
-    width: 250px;
-    height: 80px;
+    width: 245px;
+    height: 50px;
     font-family: inherit;
     font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    left: 30px;
+    margin-top: 20px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+
+}
+.usernameLoginBtn:hover {
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
 }
 
 .googleSignInContainer {
