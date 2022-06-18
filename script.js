@@ -5,57 +5,45 @@ const passwordInput = document.querySelector("#username");
 // grabbing the signIn button
 const signIn = document.querySelector(".usernameLoginBtn");
 
-// function to run after succesful sign in
-function signedIn() {
-    alert ("Succesfully signed in!")
-}
+// Attempting to make the popup change on login persistant. Not working...
+let signedIn = undefined
 
-// function to check password match
-function checkPassword(){
-    alert("checkpassword is fired")
-    chrome.storage.sync.get("passwordValue", ({passwordValue}) => {
-        if (passwordValue === "Password"){
-            signedInCheck = true;
-            signedIn()
-        } else {alert("Hint: password is Password")}
-    })
+if (signedIn === true){
+    const header = document.querySelector(".header")
+    header.textContent = `Signed in as ${usernameValue}`
+    const button = document.querySelector(".usernameLoginBtn")
+    button.textContent = "Sign Out"
 }
-// function to call on signIn button - because I'm calling this function in the .executeScript API, eveything needs to be in here (spaghetti code time... not sure if there's a better way to do this...)
+// chrome.browserAction.setPopup({popup: "./loggedInPopup.html"}); - 
+// ^This should point to a new html file for the popup when you sign in but it's reading undefined. Not sure why
+
+
+// 
 function signInFunction(){
-    chrome.storage.sync.get(["usernameValue", "passwordValue"], function(user) {
-        alert (user.usernameValue)
-        alert (user.passwordValue) //THIS IS ANNOYING! NEED TO FIND A WAY TO ACCESS BOTH INPUTS
+    chrome.storage.sync.get("usernameValue", ({usernameValue})=> {
+        alert(usernameValue)
+        // const header = document.getElementsByTagName("h1");
+        // header.textContent = `Signed In as ${usernameValue}`
     })
 }
-
 
 // adding an event listener
-signIn.addEventListener("click", async () => {
-    let [tab] = await chrome.tabs.query({active: true, currentWindow: true});
+signIn.addEventListener("click", () => {
+    signedIn = true //attempting to add persistence to the popup
 
     const usernameValue = usernameInput.value;
     const passwordValue = passwordInput.value;
     chrome.storage.sync.set({usernameValue, passwordValue})
 
-    chrome.scripting.executeScript({
-        target: { tabId: tab.id},
-        function: signInFunction,
-    })
+    // sending message to content.js to run the monitoring script
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        chrome.tabs.sendMessage(tabs[0].id, {username: usernameValue});
+        });
+
+    const header = document.querySelector(".header")
+    header.textContent = `Signed in as ${usernameValue}`
+    const button = document.querySelector(".usernameLoginBtn")
+    button.textContent = "Sign Out"
+
 })
 
-// // array to hold log in objects for saving into local storage.
-// let localStorageArray = []
-
-// function createUserObject(username, password){
-//     username = usernameInput.value;
-//     password = passwordInput.value;
-//     chrome.storage.sync.set({"username":username, "password":password})
-// }
-
-
-// adding the event listener to the signIn button
-
-// signIn.addEventListener("click", () => {
-//     createUserObject();
-//     console.log(localStorageArray)
-// })

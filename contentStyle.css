@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.alertPopupContainer {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    z-index: 100;
+    background: linear-gradient(90deg, rgba(168,67,65,1) 35%, rgba(245,158,84,1) 100%);
+    display: flex;
+    border-radius: 10px;
+    font-family: "Roboto", sans-serif;
+}
