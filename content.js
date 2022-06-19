@@ -17,6 +17,7 @@ function monitor(message) {
         // create the elements for the alert
         const alertPopupContainer = document.createElement("div")
         const alertPopupText = document.createElement("p")
+        const alertPopupButtonContainer = document.createElement("div")
         const alertPopupButtonYes = document.createElement("button")
         const alertPopupButtonNo = document.createElement("button")
 
@@ -30,11 +31,13 @@ function monitor(message) {
         // toggle their css classes
         alertPopupContainer.classList.toggle("alertPopupContainer")
         alertPopupText.classList.toggle("alertPopupText")
+        alertPopupButtonContainer.classList.toggle("alertPopupButtonContainer")
         alertPopupButtonYes.classList.toggle("alertPopupButtonYes")
         alertPopupButtonNo.classList.toggle("alertPopupButtonNo")
 
         // append to the container
-        alertPopupContainer.append(alertPopupText, alertPopupButtonYes, alertPopupButtonNo)
+        alertPopupContainer.append(alertPopupText, alertPopupButtonContainer)
+        alertPopupButtonContainer.append(alertPopupButtonYes, alertPopupButtonNo)
         // append to the body
         document.body.append(alertPopupContainer)
     }
