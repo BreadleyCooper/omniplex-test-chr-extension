@@ -38,6 +38,15 @@ function monitor(message) {
         // append to the container
         alertPopupContainer.append(alertPopupText, alertPopupButtonContainer)
         alertPopupButtonContainer.append(alertPopupButtonYes, alertPopupButtonNo)
+
+        // adding event listeners
+        alertPopupButtonYes.addEventListener("click", () => {
+            window.open("https://help.nickelled.com", "_blank")
+        })
+        alertPopupButtonNo.addEventListener("click", () => {
+            alertPopupContainer.remove();
+            monitor();
+        })
         // append to the body
         document.body.append(alertPopupContainer)
     }

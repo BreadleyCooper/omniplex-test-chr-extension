@@ -9,7 +9,7 @@ body{
 .alertPopupContainer {
     width: 300px;
     height: 120px;
-    position: absolute;
+    position: sticky;
     bottom: 40px;
     right: 50px;
     z-index: 100;
@@ -22,6 +22,10 @@ body{
     padding: 1rem;
     /* transform: translate(0, 40px);
     transition: transform 1000ms ease-in-out; */
+}
+
+.alertPopupButtonContainer.hidden {
+    display: none;
 }
 
 p {
