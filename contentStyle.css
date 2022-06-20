@@ -11,7 +11,7 @@ body{
     height: 120px;
     position: sticky;
     bottom: 40px;
-    right: 50px;
+    left: 50px;
     z-index: 100;
     background: linear-gradient(90deg, rgba(168,67,65,1) 35%, rgba(245,158,84,1) 100%);
     display: flex;
@@ -19,6 +19,7 @@ body{
     border-radius: 10px;                    
     font-family: "Roboto", sans-serif;
     font-weight: bold;
+    font-size: 1.2rem;
     padding: 1rem;
     /* transform: translate(0, 40px);
     transition: transform 1000ms ease-in-out; */
