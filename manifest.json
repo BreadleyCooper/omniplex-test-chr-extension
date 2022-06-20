@@ -8,6 +8,11 @@
         "default_popup": "index.html",
         "default_title": "Login Popup"
     },
+    "icons": {
+        "16": "/Assets/icon16.png",
+        "48": "/Assets/icon48.png",
+        "128": "/Assets/icon128.png"
+    },
     "content_scripts": [
         {
             "matches": ["<all_urls>"],

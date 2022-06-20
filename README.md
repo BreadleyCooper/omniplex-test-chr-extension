@@ -18,12 +18,20 @@ The password should of course be securely stored! I would implement a secure has
 
 ## Getting Started
 
+Donwload and unzip the code file. 
+
+Open Google Chrome extension manager, make sure Dev Mode is turned on. 
+
+Click on "Load unpacked" and select the root file.
+
+Clicking on the extension will show a popup to sign in. User can be anything (max 28char). Password must be "Password". 
+
+Enjoy being monitored ;)
+
+
 ### Dependencies
 
-* Google Chrome
-*
-
-
+* Google Chrome 
 
 
 ## Authors
