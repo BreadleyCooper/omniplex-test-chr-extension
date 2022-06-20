@@ -24,6 +24,8 @@ Open Google Chrome extension manager, make sure Dev Mode is turned on.
 
 Click on "Load unpacked" and select the root file.
 
+**Make sure to refresh the page you want monitoring if it's already open when you install the extension**
+
 Clicking on the extension will show a popup to sign in. User can be anything (max 28char). Password must be "Password". 
 
 Enjoy being monitored ;)
